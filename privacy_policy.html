@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – Pangolin Browser</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0D0D1A;
+            --surface: #13131F;
+            --surface2: #1A1A2E;
+            --border: rgba(255,255,255,0.08);
+            --text: #F0F0FF;
+            --text-secondary: rgba(240,240,255,0.65);
+            --text-tertiary: rgba(240,240,255,0.40);
+            --accent-blue: #4FA3E8;
+            --accent-cyan: #3DD6C8;
+            --accent-purple: #8B5CF6;
+            --accent-green: #34C759;
+            --accent-red: #FF453A;
+            --accent-yellow: #FFD60A;
+            --accent-orange: #FF9F0A;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                         Roboto, Oxygen, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* ── Hero Header ─────────────────────────────────────────────────── */
+        .hero {
+            background: linear-gradient(135deg, #1A1A35 0%, #0D0D1A 100%);
+            padding: 48px 24px 36px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -60px; left: 50%;
+            transform: translateX(-50%);
+            width: 300px; height: 300px;
+            background: radial-gradient(circle,
+                rgba(79,163,232,0.15) 0%,
+                transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-icon {
+            font-size: 56px;
+            margin-bottom: 16px;
+            display: block;
+            filter: drop-shadow(0 0 20px rgba(79,163,232,0.4));
+        }
+
+        .hero h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+
+        .hero .subtitle {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-bottom: 16px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(79,163,232,0.12);
+            border: 1px solid rgba(79,163,232,0.25);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 12px;
+            color: var(--accent-blue);
+            font-weight: 500;
+        }
+
+        /* ── Content Container ───────────────────────────────────────────── */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 28px 20px 60px;
+        }
+
+        /* ── Last Updated Banner ─────────────────────────────────────────── */
+        .last-updated {
+            background: rgba(61,214,200,0.08);
+            border: 1px solid rgba(61,214,200,0.18);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12.5px;
+            color: var(--accent-cyan);
+        }
+
+        /* ── Section Cards ───────────────────────────────────────────────── */
+        .section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 18px 20px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-icon {
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .icon-blue   { background: rgba(79,163,232,0.15); }
+        .icon-green  { background: rgba(52,199,89,0.15);  }
+        .icon-purple { background: rgba(139,92,246,0.15); }
+        .icon-cyan   { background: rgba(61,214,200,0.15); }
+        .icon-red    { background: rgba(255,69,58,0.15);  }
+        .icon-yellow { background: rgba(255,214,10,0.15); }
+        .icon-orange { background: rgba(255,159,10,0.15); }
+
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .section-body {
+            padding: 16px 20px 20px;
+        }
+
+        .section-body p {
+            color: var(--text-secondary);
+            font-size: 13.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ── Bullet Lists ────────────────────────────────────────────────── */
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 7px 0;
+            color: var(--text-secondary);
+            font-size: 13.5px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .check-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-list li .dot {
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .dot-green  { background: rgba(52,199,89,0.15);  color: #34C759; }
+        .dot-red    { background: rgba(255,69,58,0.15);  color: #FF453A; }
+        .dot-blue   { background: rgba(79,163,232,0.15); color: #4FA3E8; }
+
+        /* ── Highlight Box ───────────────────────────────────────────────── */
+        .highlight-box {
+            background: rgba(139,92,246,0.08);
+            border: 1px solid rgba(139,92,246,0.20);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-top: 12px;
+        }
+
+        .highlight-box p {
+            color: rgba(139,92,246,0.90) !important;
+            font-size: 13px !important;
+            margin: 0 !important;
+        }
+
+        /* ── Info Row ────────────────────────────────────────────────────── */
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .info-row:last-child { border-bottom: none; }
+
+        .info-label {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .info-value {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-align: right;
+        }
+
+        /* ── Contact Card ────────────────────────────────────────────────── */
+        .contact-card {
+            background: linear-gradient(135deg,
+                rgba(79,163,232,0.10) 0%,
+                rgba(61,214,200,0.06) 100%);
+            border: 1px solid rgba(79,163,232,0.20);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .contact-card .emoji { font-size: 32px; margin-bottom: 10px; }
+
+        .contact-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .contact-card p {
+            font-size: 12.5px;
+            color: var(--text-tertiary);
+            margin: 0 !important;
+        }
+
+        .email-link {
+            display: inline-block;
+            margin-top: 12px;
+            background: rgba(79,163,232,0.15);
+            border: 1px solid rgba(79,163,232,0.30);
+            border-radius: 20px;
+            padding: 8px 20px;
+            color: var(--accent-blue);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        /* ── Footer ──────────────────────────────────────────────────────── */
+        .footer {
+            text-align: center;
+            padding: 28px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-tertiary);
+            font-size: 12px;
+        }
+
+        .footer span {
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── Hero ──────────────────────────────────────────────────────────────── -->
+<div class="hero">
+    <span class="hero-icon">🦔</span>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Pangolin Browser by Cyclushub</p>
+    <div class="badge">🔒 Your privacy is our priority</div>
+</div>
+
+<div class="container">
+
+    <!-- Last Updated -->
+<!--    <div class="last-updated">-->
+<!--        🗓️ &nbsp;<strong>Last updated:</strong>&nbsp; June 2025 &nbsp;·&nbsp; Version 1.0.0-->
+<!--    </div>-->
+
+    <!-- ── 1. Introduction ─────────────────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon icon-blue">👋</div>
+            <span class="section-title">Introduction</span>
+        </div>
+        <div class="section-body">
+            <p>
+                Welcome to <strong>Pangolin Browser</strong>, developed by
+                <strong>Cyclushub</strong>. We built this browser with one goal:
+                to give you a fast, private, and secure browsing experience —
+                without selling your data or tracking your habits.
+            </p>
+            <p>
+                This Privacy Policy explains what information the app handles,
+                how it is used, and the controls you have over your data.
+                By using Pangolin Browser, you agree to this policy.
+            </p>
+        </div>
+    </div>
+
+    <!-- ── 2. Data We Do NOT Collect ──────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon icon-green">🛡️</div>
+            <span class="section-title">Data We Do NOT Collect</span>
+        </div>
+        <div class="section-body">
+            <p>
+                Pangolin Browser does <strong>not</strong> collect, transmit,
+                or share the following:
+            </p>
+            <ul class="check-list">
+                <li>
+                    <span class="dot dot-red">✕</span>
+                    Your browsing history or visited URLs
+                </li>
+                <li>
+                    <span class="dot dot-red">✕</span>
+                    Search queries you enter in the address bar
+                </li>
+                <li>
+                    <span class="dot dot-red">✕</span>
+                    Passwords, form data, or login credentials
+                </li>
+                <li>
+                    <span class="dot dot-red">✕</span>
+                    Cookies from the websites you visit
+                </li>
+                <li>
+                    <span class="dot dot-red">✕</span>
+                    Location data, camera, or microphone access
+                </li>
+                <li>
+                    <span class="dot dot-red">✕</span>
+                    Device identifiers or advertising IDs
+                </li>
+                <li>
+                    <span class="dot dot-red">✕</span>
+                    Personal information of any kind
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ── 3. Data Stored Locally ──────────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon icon-cyan">💾</div>
+            <span class="section-title">Data Stored Locally On Your Device</span>
+        </div>
+        <div class="section-body">
+            <p>
+                The following data is stored <strong>only on your device</strong>
+                and is never sent to Cyclushub or any third party:
+            </p>
+            <ul class="check-list">
+                <li>
+                    <span class="dot dot-blue">✓</span>
+                    Browsing history (only if "Save History" is enabled in Settings)
+                </li>
+                <li>
+                    <span class="dot dot-blue">✓</span>
+                    Bookmarks you save
+                </li>
+                <li>
+                    <span class="dot dot-blue">✓</span>
+                    App preferences (theme, search engine, ad block toggle, etc.)
+                </li>
+                <li>
+                    <span class="dot dot-blue">✓</span>
+                    Web cache and cookies set by websites you visit
+                </li>
+                <li>
+                    <span class="dot dot-blue">✓</span>
+                    Files you download via the browser
+                </li>
+            </ul>
+            <div class="highlight-box">
+                <p>
+                    💡 You can clear all locally stored data at any time from
+                    <strong>Settings → Clear Browsing History</strong>,
+                    <strong>Clear Cookies</strong>, or
+                    <strong>Clear Cache</strong>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 4. Incognito Mode ───────────────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon icon-purple">🕶️</div>
+            <span class="section-title">Incognito Mode</span>
+        </div>
+        <div class="section-body">
+            <p>
+                When browsing in <strong>Incognito Mode</strong>, Pangolin
+                Browser applies additional protections:
+            </p>
+            <ul class="check-list">
+                <li>
+                    <span class="dot dot-green">✓</span>
+                    No history is saved for incognito sessions
+                </li>
+                <li>
+                    <span class="dot dot-green">✓</span>
+                    Cookies and site data are not persisted after the session
+                </li>
+                <li>
+                    <span class="dot dot-green">✓</span>
+                    Web cache is disabled during incognito browsing
+                </li>
+                <li>
+                    <span class="dot dot-green">✓</span>
+                    Screenshots are blocked (secure flag applied)
+                </li>
+                <li>
+                    <span class="dot dot-green">✓</span>
+                    Biometric authentication required to access incognito tabs
+                </li>
+            </ul>
+            <p style="margin-top:12px;">
+                Note: Incognito mode does not make you anonymous to websites,
+                your ISP, or network administrators. It only prevents the app
+                from saving local data.
+            </p>
+        </div>
+    </div>
+
+    <!-- ── 5. Ad Blocking ─────────────────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon icon-red">🚫</div>
+            <span class="section-title">Ad Blocking</span>
+        </div>
+        <div class="section-body">
+            <p>
+                When <strong>Ad Block</strong> is enabled in Settings, Pangolin
+                Browser intercepts and blocks network requests to known
+                advertising and tracking domains.
+            </p>
+            <p>
+                This blocking happens entirely <strong>on your device</strong>.
+                No list of blocked URLs is ever sent to Cyclushub or any
+                external server.
+            </p>
+        </div>
+    </div>
+
+    <!-- ── 6. Third-Party Websites ─────────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon icon-orange">🌐</div>
+            <span class="section-title">Third-Party Websites</span>
+        </div>
+        <div class="section-body">
+            <p>
+                Pangolin Browser is a web browser — it loads content from
+                third-party websites that have their own privacy policies.
+                We are not responsible for the privacy practices of websites
+                you visit.
+            </p>
+            <p>
+                We encourage you to review the privacy policy of every website
+                you visit, especially before submitting personal information.
+            </p>
+        </div>
+    </div>
+
+    <!-- ── 7. Permissions ─────────────────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon icon-yellow">🔑</div>
+            <span class="section-title">App Permissions</span>
+        </div>
+        <div class="section-body">
+            <div class="info-row">
+                <span class="info-label">🌐 Internet</span>
+                <span class="info-value">Required to load web pages</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">👆 Biometric</span>
+                <span class="info-value">Protect incognito tabs</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">📥 Storage / Downloads</span>
+                <span class="info-value">Save downloaded files</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">🔔 Notifications</span>
+                <span class="info-value">Download progress alerts</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">📋 Clipboard</span>
+                <span class="info-value">Paste URLs into address bar</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── 8. Children's Privacy ───────────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon icon-green">👶</div>
+            <span class="section-title">Children's Privacy</span>
+        </div>
+        <div class="section-body">
+            <p>
+                Pangolin Browser is not directed at children under the age of
+                13. We do not knowingly collect personal information from
+                children. If you believe a child has provided personal
+                information through this app, please contact us immediately.
+            </p>
+        </div>
+    </div>
+
+    <!-- ── 9. Changes to This Policy ──────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon icon-blue">📝</div>
+            <span class="section-title">Changes to This Policy</span>
+        </div>
+        <div class="section-body">
+            <p>
+                We may update this Privacy Policy from time to time. When we do,
+                we will update the "Last updated" date at the top of this page.
+                Significant changes will be communicated through an in-app
+                notification.
+            </p>
+            <p>
+                Continued use of Pangolin Browser after changes are posted
+                constitutes your acceptance of the revised policy.
+            </p>
+        </div>
+    </div>
+
+    <!-- ── 10. Contact ─────────────────────────────────────────────────────── -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon icon-cyan">📬</div>
+            <span class="section-title">Contact Us</span>
+        </div>
+        <div class="section-body">
+            <div class="contact-card">
+                <div class="emoji">🦔</div>
+                <h3>Cyclushub</h3>
+                <p>Questions about this policy? We'd love to hear from you.</p>
+                <a class="email-link"
+                   href="mailto:cyclushub@gmail.com">
+                    cyclushub@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ── Footer ──────────────────────────────────────────────────────────────── -->
+<div class="footer">
+    © 2025 <span>Cyclushub</span> · Pangolin Browser · All rights reserved
+</div>
+
+</body>
+</html>
