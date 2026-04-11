@@ -1,1 +1,1 @@
-this is privacy policy
+
